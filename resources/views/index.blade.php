@@ -1,19 +1,25 @@
 @extends('template')
 
-@section('tulisan1', 'Data Pegawai')
+@section('test1', 'Data Pegawai')
 
 @section('link1')
     <a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
 @endsection
 
 @section('konten')
-    <br/>
-    <p>Cari Data Pegawai :</p>
 	<form action="/pegawai/cari" method="GET">
-		<input type="text" name="cari" placeholder="Cari Pegawai .." value="{{ old('cari') }}">
-		<input type="submit" value="CARI">
+        <div class="row mb-3">
+            <label for="nama" class="col-sm-2 col-form-label"><nav></nav>Cari Nama Pegawai</label>
+            <div class="col-sm-6">
+              <input type="text" name="cari" class="form-control" id="cari" placeholder="Cari Pegawai .." value="{{ old('cari') }}">
+            </div>
+            <div class="col-sm-4">
+                <input type="submit" value="CARI" class="btn btn-success">
+              </div>
+          </div>
+
 	</form>
-    <br/>
+    </br>
 
     <table class="table table-striped table-hover">
         <tr>
@@ -30,8 +36,8 @@
             <td>{{ $p->pegawai_umur }}</td>
             <td>{{ $p->pegawai_alamat }}</td>
             <td>
-                <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-info">Edit</a>
-                <a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
+                <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>
         @endforeach
@@ -42,9 +48,6 @@
 	Jumlah Data : {{ $pegawai->total() }} <br/>
 	Data Per Halaman : {{ $pegawai->perPage() }} <br/>
 
-
 	{{ $pegawai->links() }}
 
-
-</body>
-</html>
+@endsection

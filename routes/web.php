@@ -72,3 +72,19 @@ Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiDBController@edit')
 Route::post('/pegawai/update','App\Http\Controllers\PegawaiDBController@update');
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiDBController@hapus');
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiDBController@cari');
+
+Route::get('/kopi', 'App\Http\Controllers\KopiController@index');
+Route::get('/kopi/add', 'App\Http\Controllers\KopiController@add');
+Route::post('/kopi/store', 'App\Http\Controllers\KopiController@store');
+Route::get('/kopi/edit/{kode}', 'App\Http\Controllers\KopiController@edit');
+Route::post('/kopi/update', 'App\Http\Controllers\KopiController@update');
+Route::get('/kopi/delete/{kode}','App\Http\Controllers\KopiController@delete');
+Route::get('/kopi/search','App\Http\Controllers\KopiController@search');
+
+Route::get('/cart', 'App\Http\Controllers\CartController@index');
+Route::get('/cart/add', 'App\Http\Controllers\CartController@add');
+Route::post('/cart/store', 'App\Http\Controllers\CartController@store');
+Route::get('/cart/edit/{kode}', 'App\Http\Controllers\CartController@edit');
+Route::post('/cart/update', 'App\Http\Controllers\CartController@update');
+Route::get('/cart/delete/{kode}','App\Http\Controllers\CartController@delete');
+Route::get('/cart/search','App\Http\Controllers\CartController@search');
