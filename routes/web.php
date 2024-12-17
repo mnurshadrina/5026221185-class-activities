@@ -88,3 +88,14 @@ Route::get('/cart/edit/{kode}', 'App\Http\Controllers\CartController@edit');
 Route::post('/cart/update', 'App\Http\Controllers\CartController@update');
 Route::get('/cart/delete/{kode}','App\Http\Controllers\CartController@delete');
 Route::get('/cart/search','App\Http\Controllers\CartController@search');
+
+use App\Http\Controllers\KaryawanController;
+
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/karyawan/create', [KaryawanController::class, 'create']);
+Route::post('/karyawan/store', [KaryawanController::class, 'store']);
+Route::get('/karyawan/{kodepegawai}/edit', [KaryawanController::class, 'edit']);
+Route::put('/karyawan/{kodepegawai}', [KaryawanController::class, 'update']);
+Route::delete('/karyawan/{kodepegawai}', [KaryawanController::class, 'destroy']);
+
+
